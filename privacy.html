@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Invoicing App</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+               max-width: 760px; margin: 2rem auto; padding: 0 1.5rem; color: #222; line-height: 1.6; }
+        h1 { font-size: 1.8rem; margin-bottom: 0.25rem; }
+        h2 { margin-top: 2rem; font-size: 1.2rem; }
+        .meta { color: #666; font-size: 0.9rem; margin-bottom: 2rem; }
+        ul { padding-left: 1.5rem; }
+        code { background: #f4f4f4; padding: 1px 6px; border-radius: 3px; font-size: 0.9em; }
+        .footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #eee;
+                  color: #666; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <h1>Privacy Policy</h1>
+    <p class="meta">Last updated: 11 June 2026 &middot; Effective: 11 June 2026</p>
+
+    <p>This Privacy Policy describes how <strong>Invoicing App</strong> ("the App") handles
+    information when used to generate invoices through QuickBooks Online.</p>
+
+    <p>The App is developed and maintained by <strong>Kaushik Sangem</strong> (ABN 72764107589),
+    an Australian sole trader ("the Developer"). The App is a private, single-tenant desktop
+    application provided to one specific Australian business ("the User") for the User's own
+    invoicing workflow. It is not distributed to the public, sold, or offered as a service to
+    third parties.</p>
+
+    <h2>1. Roles</h2>
+    <ul>
+        <li><strong>The Developer (Kaushik Sangem)</strong> writes and maintains the software,
+            holds the Intuit Developer Portal account, and manages the OAuth Client ID and
+            Client Secret.</li>
+        <li><strong>The User</strong> is the Australian business that installs and operates the
+            App on its own Windows machine, owns the connected QuickBooks Online company, and
+            owns all data created or processed through the App.</li>
+    </ul>
+
+    <h2>2. Information accessed</h2>
+    <p>When the App is connected to the User's QuickBooks Online company, it accesses the
+    following data through the official Intuit QuickBooks Online API:</p>
+    <ul>
+        <li><strong>Customer records</strong> — name, email, billing address, ABN, customer ID</li>
+        <li><strong>Item / service records</strong> — name, code, unit price, tax codes</li>
+        <li><strong>Invoices</strong> — invoice number, line items, amounts, GST, status, sent /
+            paid timestamps</li>
+        <li><strong>Company information</strong> — company name and realm ID (used to display the
+            connected company)</li>
+    </ul>
+    <p>The App does not access banking information, payroll data, employee records, transactions
+    unrelated to invoicing, or any data outside the
+    <code>com.intuit.quickbooks.accounting</code> OAuth scope.</p>
+
+    <h2>3. Where data is stored</h2>
+    <ul>
+        <li>All data is stored locally on the User's Windows machine in
+            <code>%LOCALAPPDATA%\InvoicingApp\</code>.</li>
+        <li>Local storage uses an SQLite database file (<code>invoicing.db</code>) protected by
+            the operating system's standard user-account permissions.</li>
+        <li>OAuth access tokens and refresh tokens are encrypted at rest using Fernet (AES-128
+            in CBC mode with HMAC-SHA256 authentication) before being written to disk.</li>
+        <li>No App data is transmitted to or stored on any server other than Intuit's QuickBooks
+            Online API endpoints.</li>
+        <li><strong>The Developer does not have access to data stored on the User's machine.</strong>
+            The Developer does not operate any backend, does not receive copies of the User's
+            data, and cannot read the User's QuickBooks information.</li>
+    </ul>
+
+    <h2>4. How data is used</h2>
+    <p>Data is used solely to:</p>
+    <ul>
+        <li>Display dashboards, submission history, and invoice status to the User.</li>
+        <li>Create customers, items, and invoices in the User's QuickBooks Online company.</li>
+        <li>Trigger QuickBooks Online's standard "send invoice" email to the User's customers.</li>
+    </ul>
+    <p>Data is not used for analytics, marketing, profiling, advertising, or training of
+    machine-learning models.</p>
+
+    <h2>5. Sharing and third parties</h2>
+    <p>The App does not share data with any third party. The only external service contacted by
+    the App is the Intuit QuickBooks Online API at <code>*.api.intuit.com</code> and OAuth
+    endpoints at <code>appcenter.intuit.com</code>.</p>
+
+    <h2>6. Data retention</h2>
+    <ul>
+        <li>Local data is retained for as long as the User continues to use the App.</li>
+        <li>Disconnecting the App (via Settings &rarr; Disconnect QuickBooks) immediately deletes
+            the stored OAuth tokens from the User's machine.</li>
+        <li>Uninstalling the App does not automatically delete the local SQLite database; the
+            User can manually delete the <code>%LOCALAPPDATA%\InvoicingApp</code> folder to
+            remove all local data.</li>
+        <li>Data created in QuickBooks Online (customers, items, invoices) is retained according
+            to QuickBooks Online's own data-retention policies and is unaffected by uninstalling
+            the App.</li>
+    </ul>
+
+    <h2>7. Security measures</h2>
+    <ul>
+        <li>OAuth 2.0 is used for authentication; no passwords are ever requested or stored.</li>
+        <li>OAuth tokens are encrypted at rest using a per-machine encryption key.</li>
+        <li>All API traffic uses HTTPS / TLS 1.2 or higher.</li>
+        <li>The App runs only on the User's local machine and does not expose any network
+            services other than a temporary <code>localhost</code> listener used during the
+            OAuth authorisation callback.</li>
+        <li>The App applies the principle of least privilege by requesting only the
+            <code>com.intuit.quickbooks.accounting</code> scope.</li>
+    </ul>
+
+    <h2>8. Privacy Act application</h2>
+    <p>The Developer (Kaushik Sangem) is an Australian sole trader with annual turnover under
+    A$3 million, and is therefore generally exempt from the Privacy Act 1988 (Cth). The
+    Developer nevertheless follows the spirit of the Australian Privacy Principles voluntarily
+    in relation to the App.</p>
+    <p>Because data is held only on the User's machine and the Developer has no access to it, any
+    privacy queries from individuals whose data appears in the User's QuickBooks Online company
+    should be directed to the User in the first instance. The User remains the controller of its
+    own customer data.</p>
+
+    <h2>9. Children's data</h2>
+    <p>The App is for business use only. It does not knowingly collect data from children under 16.</p>
+
+    <h2>10. Changes to this policy</h2>
+    <p>This policy may be updated to reflect changes in Intuit platform requirements or
+    applicable law. The "Last updated" date at the top reflects the most recent revision.</p>
+
+    <h2>11. Contact</h2>
+    <p>For questions about this Privacy Policy or about the App, contact the Developer:</p>
+    <p>
+        <strong>Kaushik Sangem</strong> (sole trader, App Developer)<br>
+        Email: <a href="mailto:sangemkoushik@gmail.com">sangemkoushik@gmail.com</a><br>
+        ABN: 72764107589<br>
+        Location: New South Wales, Australia
+    </p>
+
+    <div class="footer">
+        &copy; 2026 Kaushik Sangem. All rights reserved.
+    </div>
+</body>
+</html>

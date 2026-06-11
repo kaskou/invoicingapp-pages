@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reconnect — Invoicing App</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+               max-width: 640px; margin: 4rem auto; padding: 0 1.5rem; color: #222;
+               text-align: center; line-height: 1.6; }
+        h1 { font-size: 1.8rem; }
+        .card { background: #f8f9fb; border: 1px solid #e1e4e8; border-radius: 10px;
+                padding: 2rem; text-align: left; margin-top: 2rem; }
+        ol { padding-left: 1.5rem; }
+        a { color: #0366d6; }
+        .reasons { background: #f1f8ff; border-left: 4px solid #0366d6;
+                   padding: 0.75rem 1rem; margin: 1.5rem 0; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <h1>Reconnecting Invoicing App</h1>
+
+    <div class="card">
+        <p>If your Invoicing App connection to QuickBooks Online has been disconnected, follow
+        these steps to reconnect:</p>
+
+        <ol>
+            <li>Open the <strong>Invoicing App</strong> on your computer.</li>
+            <li>Go to <strong>Settings</strong> in the sidebar.</li>
+            <li>Under <strong>QuickBooks Connection</strong>, click
+                <strong>Connect to QuickBooks</strong>.</li>
+            <li>Your default browser will open. Sign in to your QuickBooks Online account if
+                asked.</li>
+            <li>Choose the QuickBooks Online company you want to connect, then click
+                <strong>Connect</strong>.</li>
+            <li>Once authorisation is complete, you can close the browser tab and return to
+                the app.</li>
+        </ol>
+
+        <div class="reasons">
+            <strong>Common reasons a reconnect is needed:</strong>
+            <ul>
+                <li>The OAuth refresh token expired (refresh tokens last about 100 days of
+                    inactivity).</li>
+                <li>The connection was manually disconnected, either inside the app or from
+                    QuickBooks Online.</li>
+                <li>You changed which QuickBooks Online company you want to use.</li>
+                <li>QuickBooks Online password or two-factor settings changed and existing tokens
+                    were invalidated.</li>
+            </ul>
+        </div>
+
+        <p>If reconnection fails repeatedly, email
+        <a href="mailto:sangemkoushik@gmail.com">sangemkoushik@gmail.com</a> with a description of the error.</p>
+    </div>
+</body>
+</html>

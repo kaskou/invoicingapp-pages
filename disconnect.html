@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disconnect — Invoicing App</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+               max-width: 640px; margin: 4rem auto; padding: 0 1.5rem; color: #222;
+               text-align: center; line-height: 1.6; }
+        h1 { font-size: 1.8rem; }
+        .card { background: #f8f9fb; border: 1px solid #e1e4e8; border-radius: 10px;
+                padding: 2rem; text-align: left; margin-top: 2rem; }
+        ol { padding-left: 1.5rem; }
+        a { color: #0366d6; }
+        .note { background: #fff8e1; border-left: 4px solid #f4b400; padding: 0.75rem 1rem;
+                margin: 1.5rem 0; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <h1>Disconnecting Invoicing App</h1>
+
+    <div class="card">
+        <p>To disconnect the Invoicing App from your QuickBooks Online company:</p>
+
+        <ol>
+            <li>Open the Invoicing App on your computer.</li>
+            <li>Go to <strong>Settings</strong> in the sidebar.</li>
+            <li>Under <strong>QuickBooks Connection</strong>, click <strong>Disconnect</strong>.</li>
+            <li>Confirm the disconnection in the dialog.</li>
+        </ol>
+
+        <p>The app will immediately delete the OAuth tokens stored on your machine. No further
+        API calls will be made to QuickBooks Online from this installation.</p>
+
+        <div class="note">
+            <strong>Alternative:</strong> You can also revoke access from the QuickBooks Online
+            side by signing in to your QuickBooks Online company, going to
+            <strong>Settings &rarr; Apps</strong>, finding "Invoicing App", and clicking
+            <strong>Disconnect</strong>.
+        </div>
+
+        <p>Need help? Email <a href="mailto:sangemkoushik@gmail.com">sangemkoushik@gmail.com</a></p>
+    </div>
+</body>
+</html>
